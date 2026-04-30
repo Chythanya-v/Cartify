@@ -1,6 +1,13 @@
-import { prisma } from "../server/prisma.js";
-import { hashSync } from "bcrypt";
 
+import { hashSync } from "bcrypt";
+import "dotenv/config";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaClient } from "../generated/prisma/client.ts";
+
+
+const connectionString = `${process.env.DATABASE_URL}`;
+const adapter = new PrismaPg({ connectionString });
+const prisma = new PrismaClient({ adapter });
 
 async function main() {
   await prisma.user.create({
