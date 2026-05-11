@@ -8,6 +8,6 @@ const rootRouter = Router();
 
 rootRouter.use("/auth", authRouter);
 rootRouter.use("/orders", ordersRouter);
-rootRouter.use("/products", productsRouter);
+rootRouter.use("/api/products", productsRouter);
 
 export default rootRouter;

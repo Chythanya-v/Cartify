@@ -4,7 +4,7 @@ import { getProducts, createProduct, getProductById, updateProduct, deleteProduc
 
 const productsRouter = Router();
 
-productsRouter.use(authenticate); // All product routes require authentication
+// productsRouter.use(authenticate); // All product routes require authentication
 
 productsRouter.get("/", getProducts);
 productsRouter.post("/", createProduct);
